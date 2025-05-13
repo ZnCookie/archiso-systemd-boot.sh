@@ -24,7 +24,7 @@ sudo cp -f "$TMP_DIR"/arch/boot/x86_64/vmlinuz-linux "$EFI_DIR/archiso/"
 sudo cp -f "$TMP_DIR"/arch/boot/x86_64/initramfs-linux.img "$EFI_DIR/archiso/"
 sudo cp -f "$TMP_DIR"/arch/x86_64/airootfs.sfs "$EFI_DIR/archiso/x86_64/"
 
-echo -e "创建启动项..."
+echo "创建启动项..."
 sudo tee "$EFI_DIR/loader/entries/arch-rescue.conf" >/dev/null <<EOF
 title    Arch Linux (rescue system)
 sort-key arch-rescue
@@ -35,4 +35,4 @@ EOF
 
 sudo sbctl sign -s "$EFI_DIR/archiso/vmlinuz-linux"
 
-echo -e "完成!"
+echo "完成!"
